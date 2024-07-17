@@ -1,6 +1,6 @@
 Deployment 
 
-step 1:- Git clone https://github.com/yogeshfunde2708/NodeJsProject1.git
+step 1:- Git clone https://github.com/yogeshfunde2708/AI-Lab.git
 step 2:- npm install
 step 3:- cd ai-lab
 step 4:- npm start
