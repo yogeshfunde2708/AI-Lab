@@ -1,3 +1,10 @@
+Deployment 
+
+step 1:- Git clone https://github.com/yogeshfunde2708/NodeJsProject1.git
+step 2:- npm install
+step 3:- cd ai-lab
+step 4:- npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
