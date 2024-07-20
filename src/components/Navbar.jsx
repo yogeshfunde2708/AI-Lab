@@ -17,6 +17,7 @@ const Navbar = () => {
   };
   return (
     <>
+    <div className="static-layout not-on-top">
       <nav
         id="header-navbar"
         className="navbar navbar-expand-lg py-4 navbar-transparent"
@@ -63,7 +64,9 @@ const Navbar = () => {
         </div>
       ) : null}
       </nav>
+      </div>
     </>
+   
   );
 };
 

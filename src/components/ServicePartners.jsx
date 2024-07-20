@@ -1,26 +1,38 @@
-import React,{useEffect, useState} from "react";
+import React from "react";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import $ from 'jquery';
-import 'owl.carousel';
+import OwlCarousel from 'react-owl-carousel';
 
 const ServicePartners = () => {
-    const [translateX, setTranslateX] = useState(-940);
-    const positions = [-940, -1096, -1253, -1410, -1566, -1723];
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const options = {
+    loop: true,
+    margin: 10,
+    nav: false,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    smartSpeed: 1000,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 6
+      }
+    }
+  };
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-          setCurrentIndex((prevIndex) => {
-            const nextIndex = (prevIndex + 1) % positions.length;
-            setTranslateX(positions[nextIndex]);
-            return nextIndex;
-          });
-        }, 5000);
-    
-        return () => clearInterval(interval);
-      }, []);
-    
+  const partners = [
+    { src: "/img/microsoft.png", width: "80%", height: "80%" },
+    { src: "/img/google_cloud.png" },
+    { src: "/img/nvidia.png" },
+    { src: "/img/intel.png" },
+    { src: "/img/ibm.png" },
+    { src: "/img/aws.png", width: "80%", height: "80%" },
+  ];
+
   return (
     <section
       className="overlay bg-fixed"
@@ -31,10 +43,7 @@ const ServicePartners = () => {
       data-stellar-background-ratio="0.8"
     >
       <div className="container">
-        <div
-          className="section-content"
-          data-aos="fade-up"
-        >
+        <div className="section-content" data-aos="fade-up">
           <div className="row">
             <div className="col-md-12">
               <div className="title-wrap mb-5 text-white">
@@ -42,242 +51,19 @@ const ServicePartners = () => {
               </div>
             </div>
             <div className="col-md-12 client-holder">
-              <div className="client-slider owl-carousel owl-loaded owl-drag">
-                <div className="owl-stage-outer">
-                  <div className="owl-stage" 
-                     style={{
-                        transform: `translate3d(${translateX}px, 0px, 0px)`,
-                        transition: 'all 1s ease 0s',
-                        width: '2821px',
-                      }}
-                  >
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          width="80%"
-                          height="80%"
-                          src="\img\microsoft.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\google_cloud.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\nvidia.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\intel.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\ibm.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          width="80%"
-                          height="80%"
-                          src="\img\aws.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\microsoft.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\google_cloud.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\nvidia.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\intel.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\ibm.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                           width='80%'
-                          height='80%'
-                          src="\img\aws.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\microsoft.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\google_cloud.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\nvidia.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\intel.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                          src="\img\ibm.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="owl-item cloned"
-                      style={{ width: "146.667px", marginRight: "10px" }}
-                    >
-                      <div className="client-item">
-                        <img
-                          className="img-responsive"
-                           width='80%'
-                          height='80%'
-                          src="\img\aws.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
+              <OwlCarousel className="client-slider" {...options}>
+                {partners.map((partner, index) => (
+                  <div key={index} className="client-item">
+                    <img
+                      className="img-responsive"
+                      width={partner.width || "100%"}
+                      height={partner.height || "100%"}
+                      src={partner.src}
+                      alt=""
+                    />
                   </div>
-                </div>
-              </div>
+                ))}
+              </OwlCarousel>
             </div>
           </div>
         </div>
@@ -287,3 +73,4 @@ const ServicePartners = () => {
 };
 
 export default ServicePartners;
+
