@@ -15,7 +15,6 @@ const Testimonial = () => {
           className="section-content"
           data-aos="fade-up"
         >
-          {/* Content goes here */}
         </div>
       </div>
     </section>

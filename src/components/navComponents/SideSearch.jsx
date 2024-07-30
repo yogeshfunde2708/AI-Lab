@@ -19,7 +19,7 @@ const SideSearch = (props) => {
       <Link to=" " id="side-nav-close" onClick={handleClose} style={{ display:'block', transition:'0.3s', fontSize:'25px', textDecoration:'none'}}>
         x
       </Link>
-      <div className="sidenav-content">
+      <div className="sidenav-content" data-aos="fade-up">
         <form action="">
           <div className="input-group md-form form-sm form-2 pl-0">
             <input

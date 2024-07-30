@@ -109,7 +109,7 @@ const Features = () => {
                     <div className="my-4">
                       <i className="lnr lnr-magic-wand fs-40"></i>
                     </div>
-                    <h4>ACustom AI Solutions Development</h4>
+                    <h4>Custom AI Solutions Development</h4>
                     <p>
                       At The AI Lab, we offer Custom AI Solutions Development,
                       tailoring cutting-edge AI tools to meet your specific

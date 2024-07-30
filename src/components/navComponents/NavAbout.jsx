@@ -11,9 +11,7 @@ const NavAbout = () => {
           className="jumbotron jumbotron-single d-flex align-items-center"
           style={{
             backgroundImage: `url(/img/The-AI-Lab-Original.jpg)`,
-            backgroundPosition: "0% -78.165px",
           }}
-          data-stellar-background-ratio="0.8"
         >
           <div className="container text-center">
             <h1 className="display-2 mb-4">About</h1>
