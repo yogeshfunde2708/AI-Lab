@@ -117,7 +117,9 @@ section {
     font-size: 2rem;
     color: #fff;
 }
-
+.navbar-toggler:focus {
+    box-shadow: none;
+  }
 .jumbotron {
     color: #fff;
     padding-top: 80px;
@@ -926,7 +928,3 @@ section {
 strong {
     font-weight: bold;
 }
-
-/* .hidden {
-    display: none;
-  } */
