@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "linearicons/dist/web-font/style.css";
 import "../../index.css";
 import SideNav from "./SideNav";
@@ -7,12 +7,13 @@ import SideSearch from "./SideSearch";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Nav = (props) => {
+const Nav = () => {
   const [showSideNav, setShowSideNav] = useState(false);
   const [showSideSearch, setShowSideSearch] = useState(false);
   const sideNavRef = useRef(null);
   const sideSearchRef = useRef(null);
   const [isTop, setIsTop] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     AOS.init({
@@ -50,9 +51,12 @@ const Nav = (props) => {
   const closeSideSearch = () => {
     setShowSideSearch(false);
   };
-  const handleReload = () => {
-    setShowSideNav(false);
-    window.location.href = '/';
+
+  const handleReload = (event) => {
+    event.preventDefault();
+    if (location.pathname !== "/") {
+      window.location.href = "/";
+    }
   };
 
   return (
