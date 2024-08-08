@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 const Navbar = () => {
   const [showSideNavbar, setShowSideNavbar] = useState(false);
   const [isTop, setIsTop] = useState(true);
-  const sideNavbarRef = useRef(null);
+  const sideNavbarRef = useRef(null); 
 
   useEffect(() => {
     AOS.init({
@@ -38,6 +38,10 @@ const Navbar = () => {
     setShowSideNavbar(false);
   };
 
+  const handleReload = () => {
+    setShowSideNavbar(false);
+    window.location.href = '/';
+  };
   return (
     <>
       <div
@@ -50,7 +54,7 @@ const Navbar = () => {
       >
         <nav id="header-navbar" className="navbar navbar-expand-lg py-4">
           <div className="container">
-            <Link className="navbar-brand d-flex align-items-center text-white" to="/">
+            <Link className="navbar-brand d-flex align-items-center text-white" to="/" onClick={handleReload}>
               <h3 className="font-weight-bolder mb-0 border border-white p-2 m-2">
                 The AI Lab
               </h3>
@@ -61,15 +65,15 @@ const Navbar = () => {
               data-bs-toggle="collapse"
               aria-expanded="false"
               aria-label="Toggle navigation"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
+              data-bs-target="#navbar-nav-header"
+              aria-controls="navbar-nav-header"
             >
               <span className="lnr lnr-menu"></span>
             </button>
-            <div className="navbar-collapse collapse text-white" id="navbarSupportedContent">
+            <div className="navbar-collapse collapse text-white" id="navbar-nav-header">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">
+                  <Link className="nav-link" to="/" onClick={handleReload}>
                     Home
                   </Link>
                 </li>

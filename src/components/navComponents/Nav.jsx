@@ -7,7 +7,7 @@ import SideSearch from "./SideSearch";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Nav = () => {
+const Nav = (props) => {
   const [showSideNav, setShowSideNav] = useState(false);
   const [showSideSearch, setShowSideSearch] = useState(false);
   const sideNavRef = useRef(null);
@@ -50,6 +50,11 @@ const Nav = () => {
   const closeSideSearch = () => {
     setShowSideSearch(false);
   };
+  const handleReload = () => {
+    setShowSideNav(false);
+    window.location.href = '/';
+  };
+
   return (
     <>
       <div data-spy="scroll" data-target="#navabr" className={`static-layout ${isTop ? "navbar-transparent" : "not-on-top"}`} data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
@@ -61,6 +66,7 @@ const Nav = () => {
             <Link
               className="navbar-brand d-flex align-items-center text-white"
               to="/"
+              onClick={handleReload}
             >
               <h3 className="font-weight-bolder mb-0 border border-white p-2 m-2">
                 The AI Lab
@@ -72,18 +78,18 @@ const Nav = () => {
               data-bs-toggle="collapse"
               aria-expanded="false"
               aria-label="Toggle navigation"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
+              data-bs-target="#navbar-nav-header"
+              aria-controls="navbar-nav-header"
             >
               <span className="lnr lnr-menu"></span>
             </button>
             <div
               className="navbar-collapse collapse text-white"
-              id="navbarSupportedContent"
+              id="navbar-nav-header"
             >
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">
+                  <Link className="nav-link" to="/" onClick={handleReload}>
                     Home
                   </Link>
                 </li>

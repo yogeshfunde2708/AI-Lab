@@ -12,7 +12,7 @@ const SideNavbar = (props) => {
       <Link to=" " id="side-nav-close"  onClick={onClose} style={{ display:'block', transition:'0.3s', fontSize:'25px', textDecoration:'none'}} >
         x
       </Link>
-      <div className="sidenav-content">
+      <div className="sidenav-content" data-aos="fade-up">
         <p>| The AI Lab |</p>
         <p>100 Innovation Drive, Silicon Valley, CA 94025</p>
         <p>
