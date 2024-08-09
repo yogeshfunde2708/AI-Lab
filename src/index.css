@@ -120,6 +120,7 @@ section {
 .navbar-toggler:focus {
     box-shadow: none;
   }
+
 .jumbotron {
     color: #fff;
     padding-top: 80px;
@@ -678,4 +679,8 @@ section {
 
 strong {
     font-weight: bold;
+}
+
+.section-sub-title{
+background-color: aliceblue;
 }
