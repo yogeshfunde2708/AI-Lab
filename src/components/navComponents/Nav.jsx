@@ -58,6 +58,12 @@ const Nav = () => {
       window.location.href = "/";
     }
   };
+  const handleReloadAbout = () => {
+    window.location.href = "/about";
+  };
+  const handleReloadContact = () => {
+    window.location.href = "/contact";
+  };
 
   return (
     <>
@@ -98,12 +104,12 @@ const Nav = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about">
+                  <Link className="nav-link" to="/about" onClick={handleReloadAbout}>
                     About
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/contact">
+                  <Link className="nav-link" to="/contact" onClick={handleReloadContact}>
                     Contact
                   </Link>
                 </li>

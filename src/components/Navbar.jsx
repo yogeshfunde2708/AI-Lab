@@ -42,6 +42,13 @@ const Navbar = () => {
     setShowSideNavbar(false);
     window.location.href = '/';
   };
+
+  const handleReloadAbout = () => {
+    window.location.href = "/about";
+  };
+  const handleReloadContact = () => {
+    window.location.href = "/contact";
+  };
   return (
     <>
       <div
@@ -78,12 +85,12 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about">
+                  <Link className="nav-link" to="/about" onClick={handleReloadAbout}>
                     About
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/contact">
+                  <Link className="nav-link" to="/contact" onClick={handleReloadContact}>
                     Contact
                   </Link>
                 </li>
